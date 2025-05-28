@@ -26,6 +26,7 @@ import {
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
 import { slugField } from '@/fields/slug'
+import { BrokenBlock } from '@/blocks/brokenBlock'
 
 export const Posts: CollectionConfig<'posts'> = {
   slug: 'posts',
@@ -101,6 +102,11 @@ export const Posts: CollectionConfig<'posts'> = {
               }),
               label: false,
               required: true,
+            },
+            {
+              name: 'layout',
+              type: 'blocks',
+              blocks: [BrokenBlock],
             },
           ],
           label: 'Content',
